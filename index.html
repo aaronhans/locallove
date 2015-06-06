@@ -9,6 +9,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: Arial,Helvetica;
 }
 html, body {
 	margin:0;padding:0;
@@ -47,6 +48,11 @@ header .logo {
 	display: inline-block;
   margin: 20px;
 }
+.metadata {
+  width: 80%;
+  margin:20px auto;
+  margin: 20px;	
+}
 .tile img, .tile .title {
 	position:absolute;
 }
@@ -60,7 +66,6 @@ header .logo {
 	height:100%;
 }
 .tile .title {
-	font-family: Arial, Helvetica;
   font-size: 42px;
   line-height: 250px;
   top: 0;
@@ -69,6 +74,13 @@ header .logo {
   width: 100%;
   color: #fff;
   background-color:rgba(0,0,0,.3);
+}
+.labels .label {
+	background-color: #00cc00;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+  color: #fff;
 }
 @media (max-width: 600px) {
 	.tile {
@@ -87,7 +99,7 @@ header .logo {
 
 <header>
 	
-	<h1> <img class="logo" src="http://hack-smc.org/wp-content/uploads/2015/03/SMC_Logo_WEB-e1426027062143-150x150.png">Local, socially responsible businesses</h1>
+	<h1><img class="logo" src="http://hack-smc.org/wp-content/uploads/2015/03/SMC_Logo_WEB-e1426027062143-150x150.png">Local, socially responsible businesses</h1>
 </header>
 
 <div class="tileset">
@@ -125,40 +137,114 @@ header .logo {
 		<img src="http://boardsportscalifornia.com/wp-content/uploads/2014/10/womensKite.jpeg" alt="Picture from Board Sports" class="background">
 		<span class="title">Kiteboard</span>
 	</span>
+<!--
+	<span class="tile">
+		<img src="http://" alt="Picture by" class="background">
+		<span class="title">Barbers</span>
+	</span>
+-->	
 </div>
 
+<div class="specificTiles"></div>
 <!--
 http://boardsportscalifornia.com/wp-content/uploads/2010/03/RebeccaSUP.jpg
 -->
 
 
 
-<!---
-
+<!--
 Keplers Books
 Captains sk8
 J-Cuts RWC
 Gelb
-B strett book
+B street books
 3 bees coffe
 nandi yoga
 atlas sk8
 true plant coffee organic
 pick of the litter thrift shop
 
-
 farmers markets
-
+redwood trading post
 music stores (gelb)
-
 coffee (3 bees)
-
 yoga (nandi)
+-->
 
-skateboard (atlas)
+<script type="text/javascript">
+var data = { "businesses": [
+	{
+		"name":"Board Sports",
+		"description":"Board Sports was founded by independent entrepreneurs Jane and Rebecca. They run free events teaching hundreds of women kite, windsurf and paddle boarding skills. Board Sports also sponsors local ecological efforts like shoreline clean up.",
+		"category":"Kiteboard",
+		"labels":["Independent","Local Event Creator","Ecological"],
+		"address":"1603 Coyote Point Drive, San Mateo, CA 94401",
+		"img":"http://boardsportscalifornia.com/wp-content/uploads/2010/03/JCRG-300x217.jpg",
+		"website":"http://boardsportscalifornia.com/"
+	},
+	{
+		"name":"Board Sports",
+		"description":"Board Sports was founded by independent entrepreneurs Jane and Rebecca. They run free events teaching hundreds of women kite, windsurf and paddle boarding skills. Board Sports also sponsors local ecological efforts like shoreline clean up.",
+		"category":"Kiteboard",
+		"labels":["Independent","Local Event Creator","Ecological"],
+		"address":"1603 Coyote Point Drive, San Mateo, CA 94401",
+		"img":"http://boardsportscalifornia.com/wp-content/uploads/2010/03/JCRG-300x217.jpg",
+		"website":"http://boardsportscalifornia.com/"
+	},
+	{
+		"name":"",
+		"description":"",
+		"category":"",
+		"labels":[],
+		"address":"",
+		"img":"",
+		"website":""
+	},
+]};
+function showTile(event) {
+	name = event.target.innerHTML;
+	var matches = [];
+	console.log(name)
+	for(var i = 0;i<data.businesses.length;i++) {
+		console.log(data.businesses[i].category)
+		if(data.businesses[i].category == name) {
+			matches.push(data.businesses[i]);
+		}
+	}
+	console.log(matches)
+	//slide tileset left
+	document.querySelector('.tileset').style.display = 'none';
+	document.querySelector('.specificTiles').style.display = 'block';
+	for(var i = 0;i<matches.length;i++) {
+		var item = matches[i];
+		var html = "";
+		html += '<div class="business"><div class="metadata">'
+		html += '<div class="metadata"><h2>'+item.name+'</h2>';
+		html += '<img src="'+item.img+'" class="busImage"/></div>';
+		html += '<p class="labels">';
+		for(var z = 0;z<item.labels.length;z++) {
+			html += '<span class="label">'+item.labels[z]+'</span>';
+		}
+		html += '</p>';
+		html += '<p class="description">'+item.description+'</p>';
+		html += '<p class="address">'+item.address+'</p>';
+		html += '<p class="website"><a href="'+item.website+'">'+item.website+'</a></p>';
+		html += '</div></div>'
+		document.querySelector('.specificTiles').insertAdjacentHTML('beforeend',html);
+	}
+	window.scrollTo(0,0)
+}
+var tiles = document.querySelectorAll('.tile');
+for(var i = 0;i<tiles.length;i++) {
+	tiles[i].addEventListener('click',showTile);
+}
 
-bookstores ()
---->
+window.addEventListener('popstate', function(event) {
+	document.querySelector('.tileset').style.display = 'block';
+	document.querySelector('.specificTiles').style.display = 'none';
+});
+
+</script>
 
 </body>
 </html>
