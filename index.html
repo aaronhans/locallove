@@ -232,7 +232,9 @@ function showTile(event) {
 		html += '</div></div>'
 		document.querySelector('.specificTiles').insertAdjacentHTML('beforeend',html);
 	}
-	window.scrollTo(0,0)
+	window.scrollTo(0,0);
+	history.pushState(data, name, "/"+name);
+
 }
 var tiles = document.querySelectorAll('.tile');
 for(var i = 0;i<tiles.length;i++) {
