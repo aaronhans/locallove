@@ -49,7 +49,7 @@ header .logo {
   margin: 20px;
 }
 .metadata {
-  width: 80%;
+  width: 90%;
   margin:20px auto;
   margin: 20px;	
 }
@@ -81,6 +81,27 @@ header .logo {
   margin: 20px;
   display: inline-block;
   color: #fff;
+}
+.busImage {
+	max-width: 300px;
+}
+.metadata .holder {
+	height: 200px;
+	overflow:hidden;
+	border:solid 1px #ccc;
+	margin:0 10px;
+	display: inline-block;
+}
+.metadata h2 {
+	text-transform: uppercase;
+}
+.description, .address {
+	margin-left:20px;
+}
+.specificTiles h3 {
+	font-size: 32px;
+  text-transform: uppercase;
+  text-indent: 30px;
 }
 @media (max-width: 600px) {
 	.tile {
@@ -137,39 +158,16 @@ header .logo {
 		<img src="http://boardsportscalifornia.com/wp-content/uploads/2014/10/womensKite.jpeg" alt="Picture from Board Sports" class="background">
 		<span class="title">Kiteboard</span>
 	</span>
-<!--
 	<span class="tile">
-		<img src="http://" alt="Picture by" class="background">
-		<span class="title">Barbers</span>
+		<img src="https://s3-us-west-1.amazonaws.com/locallove/images/Babershop.jpg" alt="Picture by" class="background">
+		<span class="title">Barber Shop</span>
 	</span>
--->	
 </div>
 
-<div class="specificTiles"></div>
-<!--
-http://boardsportscalifornia.com/wp-content/uploads/2010/03/RebeccaSUP.jpg
--->
+<div class="specificTiles">
+	<h3></h3>
+</div>
 
-
-
-<!--
-Keplers Books
-Captains sk8
-J-Cuts RWC
-Gelb
-B street books
-3 bees coffe
-nandi yoga
-atlas sk8
-true plant coffee organic
-pick of the litter thrift shop
-
-farmers markets
-redwood trading post
-music stores (gelb)
-coffee (3 bees)
-yoga (nandi)
--->
 
 <script type="text/javascript">
 var data = { "businesses": [
@@ -179,27 +177,134 @@ var data = { "businesses": [
 		"category":"Kiteboard",
 		"labels":["Independent","Local Event Creator","Ecological"],
 		"address":"1603 Coyote Point Drive, San Mateo, CA 94401",
-		"img":"http://boardsportscalifornia.com/wp-content/uploads/2010/03/JCRG-300x217.jpg",
+		"img":["http://boardsportscalifornia.com/wp-content/uploads/2010/03/JCRG-300x217.jpg","http://boardsportscalifornia.com/wp-content/uploads/2014/10/12_Crousing_EVO_01.jpg"],
 		"website":"http://boardsportscalifornia.com/"
 	},
 	{
-		"name":"Board Sports",
-		"description":"Board Sports was founded by independent entrepreneurs Jane and Rebecca. They run free events teaching hundreds of women kite, windsurf and paddle boarding skills. Board Sports also sponsors local ecological efforts like shoreline clean up.",
-		"category":"Kiteboard",
-		"labels":["Independent","Local Event Creator","Ecological"],
-		"address":"1603 Coyote Point Drive, San Mateo, CA 94401",
-		"img":"http://boardsportscalifornia.com/wp-content/uploads/2010/03/JCRG-300x217.jpg",
-		"website":"http://boardsportscalifornia.com/"
+		"name":"Atlas Skateboard Shop",
+		"description":"Founded by Mike Manidis and Ryen Motzek, Atlas is the result of these local skater\'s love for the sport. The store and brand are the result of hard work and collaboration by a group of dedicated individuals driven by passion over profit, to preserve the true definition of skateboarding and the culture that surrounds it. The physical location serves as a retail store and art gallery that features a well curated stocklist of like-minded brands as well as a place to host events to coincide with special projects mainly exclusive to Atlas. Since its beginnings as an independent project that was designed/hand built by friends and family, Atlas continues to pursue its original mission by sustaining a welcoming environment and brand experience for those that appreciate the continuous efforts.",
+		"category":"Skateboard",
+		"labels":["Independent","Local Event Creator","Art","Involved in Community"],
+		"img":["https://s3-us-west-1.amazonaws.com/locallove/images/Atlas1.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/Atlas2.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/Atlas4.jpg"],
+		"address":"209 2nd Ave. San Mateo, CA 94401",
+		"website":"http://www.atlasskateboarding.com/"
 	},
 	{
-		"name":"",
-		"description":"",
-		"category":"",
-		"labels":[],
-		"address":"",
-		"img":"",
-		"website":""
+		"name":"Gelb Music",
+		"description":"Over 75 years our dedicated staff of musicians has assisted pros and beginners alike in getting not only the finest gear available but the right gear for their needs. At Gelb it\'s ALWAYS been about the music--playing it that is. We don\'t just sell it, we use it. Each department constantly monitors advertising nationwide to make sure you always get the lowest price possible. If you would like to play, listen to, or learn about the latest gear in a relaxed atmosphere, with a non-commissioned knowledgeable salesman who will be there long after the sale AND get a great deal then come see us. This store has been around since the 30\'s and has had 3 different owners, all local to the Bay Area. ",
+		"category":"Music",
+		"img":["https://s3-us-west-1.amazonaws.com/locallove/images/Gelb1.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/gelb2.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/gelb3.jpg"],
+		"labels":["Independent","Educational","Local Fair Labor"],
+		"address":"722 El Camino Real, Redwood City, CA 94063",
+		"website":"https://www.gelbmusic.com/"
 	},
+	{
+		"name":"Nandi Yoga",
+		"description":"Nandi Yoga is a tranquil space in the heart of San Mateo owned by Wendy Klein. Here, people of all ages and abilities practice yoga in an earth-friendly environment, supported by nurturing, experienced teachers and fellow practitioners. We offer a wide range of daily classes in diverse styles for adults, children, and families. Whether you are new to yoga or have an advanced practice, we encourage you to join our community.",
+			"img":["https://s3-us-west-1.amazonaws.com/locallove/images/Nandi1.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/nandi2.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/nandi3.jpg"],
+		"category":"Yoga",
+		"labels":["Environmental","Educational","Community Focused"],
+		"address":"309 8th Ave, San Mateo, CA 94401",
+		"website":"http://www.nandiyoga.com/",
+	},
+	{
+		"name":"J\'s Cutz",
+		"description":"Owned by Jose Vasques, J\'s Cutz has been a culture center for the youth of Redwood City for over 7 years.  All the barbers in the shop are from the Fair Oaks neighborhood where they add their local style to the latest trends in urban male hair styles.",
+		"category":"Barber Shop",
+		"labels":["Independent","Locally owned","Local Fair Labor"],
+		"img":["https://s3-us-west-1.amazonaws.com/locallove/images/JCutz1.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/JCutz2.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/JCutz3.jpg"],
+		"address":"171 5th Ave Ste 201, 2nd Fl Redwood City, CA 94063",
+	},
+	{
+		"name":"B Street Books",
+		"description":"Owned by Lew Cohen a San Mateo local, We buy and sell used, rare, collectible, and vintage books and are conveniently located in the heart of the San Francisco Bay Area peninsula.",
+		"category":"Books",
+		"img":["https://s3-us-west-1.amazonaws.com/locallove/images/Bstreet1.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/Bstreet2.jpg","https://s3-us-west-1.amazonaws.com/locallove/images/Bstreet3.jpg"],
+		"labels":["Environmental","Educational","Community Focused"],
+		"address":"301 South B. Street San Mateo, CA 94401",
+		"website":"http://www.bstreetbooks.com/",		
+	},
+
+	{
+		"name": "Farmers Market at CalTrain Parking", 
+		"address":"El Camino Real & O'Neil St., Belmont", 
+		"description": "Year Round market on Sunday 09:00:00 AM - 01:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Farmers Market at Serramonte Shopping Center", 
+		"address":"Hwy 280 & Serramonte Blvd., Daly City", 
+		"description": "Year Round: Thursdays at 09:00:00 AM - 01:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Coastside Farmers Market", 
+		"address":"Shoreline Station / Kelly Ave., Half Moon Bay", 
+		"description": "May - December, Saturdays from 09:00:00 AM - 01:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Farmers Market at Rockaway Beach", 
+		"address":"400 Old County Rd, Pacifica", 
+		"description": "May - December, Wednesdays from 02:30:00 PM - 06:30:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Pescadero Grown!", 
+		"address":"251 Stage Rd, Pescadero", 
+		"description": "June 4 - November, 2015, Thursdays from 03:00:00 PM - 07:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Farmers Market at Kaiser Permanente", 
+		"address":"1150 Veterans Blvd., Redwood City", 
+		"description": "April 1  - October 28, 2015, Wednesdays from 10:00:00 AM - 02:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Kiwanis Market", 
+		"address":"500 Arguello Street, Redwood City", 
+		"description": "April 4 - November 28, 2015 on Saturdays from 08:00:00 AM - 12:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Farmers Market at College of San Mateo", 
+		"address":"25th Ave. at Hacienda St., San Mateo", 
+		"description": "",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Farmers Market at Kaiser Permanente", 
+		"address":"1200 El Camino Real, South San Francisco", 
+		"description": "May 5 -  October 13, 2015 on Tuesdays from 10:00:00 AM - 02:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	},
+	{
+		"name": "Farmers Market at Orange Memorial Park", 
+		"address":"Orange Ave. & Tennis Drive, South San Francisco", 
+		"description": "May 2 - October 24, 2015 on Saturdays from 10:00:00 AM - 02:00:00 PM",
+		"category":"Farmers Markets",
+		"img":[],
+		"labels":["Ecological","Local Owners"]
+	}
 ]};
 function showTile(event) {
 	name = event.target.innerHTML;
@@ -211,7 +316,7 @@ function showTile(event) {
 			matches.push(data.businesses[i]);
 		}
 	}
-	console.log(matches)
+
 	//slide tileset left
 	document.querySelector('.tileset').style.display = 'none';
 	document.querySelector('.specificTiles').style.display = 'block';
@@ -220,7 +325,10 @@ function showTile(event) {
 		var html = "";
 		html += '<div class="business"><div class="metadata">'
 		html += '<div class="metadata"><h2>'+item.name+'</h2>';
-		html += '<img src="'+item.img+'" class="busImage"/></div>';
+		for(var z = 0;z<item.img.length;z++) {
+			html += '<span class="holder"><img src="'+item.img[z]+'" class="busImage"/></span>';
+		}
+		html += '</div>';
 		html += '<p class="labels">';
 		for(var z = 0;z<item.labels.length;z++) {
 			html += '<span class="label">'+item.labels[z]+'</span>';
@@ -228,11 +336,15 @@ function showTile(event) {
 		html += '</p>';
 		html += '<p class="description">'+item.description+'</p>';
 		html += '<p class="address">'+item.address+'</p>';
-		html += '<p class="website"><a href="'+item.website+'">'+item.website+'</a></p>';
+		if(item.website) {
+			html += '<p class="website"><a href="'+item.website+'">'+item.website+'</a></p>';
+		}
 		html += '</div></div>'
 		document.querySelector('.specificTiles').insertAdjacentHTML('beforeend',html);
 	}
+
 	window.scrollTo(0,0);
+	document.querySelector('.specificTiles h3').innerHTML = name;
 	history.pushState(data, name, "/"+name);
 
 }
@@ -245,6 +357,8 @@ window.addEventListener('popstate', function(event) {
 	document.querySelector('.tileset').style.display = 'block';
 	document.querySelector('.specificTiles').style.display = 'none';
 });
+
+
 
 </script>
 
