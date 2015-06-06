@@ -164,9 +164,7 @@ header .logo {
 	</span>
 </div>
 
-<div class="specificTiles">
-	<h3></h3>
-</div>
+<div class="specificTiles"></div>
 
 
 <script type="text/javascript">
@@ -324,10 +322,10 @@ function showTile(event) {
 			matches.push(data.businesses[i]);
 		}
 	}
-	console.log(matches)
 
 	//slide tileset left
 	document.querySelector('.tileset').style.display = 'none';
+	document.querySelector('.specificTiles').innerHTML = '<h3></h3>';
 	document.querySelector('.specificTiles').style.display = 'block';
 	for(var i = 0;i<matches.length;i++) {
 		var item = matches[i];
